@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Prof-It : Users{% endblock %}
+
+{% block content %}
+
+{{ macros.create_header('Users') }}
+
+
+
+<table class="table table-light table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Email</th>
+            <th scope="col">Surname</th>
+            <th scope="col">First name</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">School</th>
+            <th scope="col">Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in range(arr_len) %}
+        <tr>
+            <th scope="row">{{ query['id'][i] }}</th>
+            <td>{{ query['email'][i] }}</td>
+            <td>{{ query['surname'][i] }}</td>
+            <td>{{ query['first_name'][i] }}</td>
+            <td>{{ query['birth_date'][i] }}</td>
+            <td>{{ query['school'][i] }}</td>
+            <td>{{ query['course'][i] }}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+
+{% endblock %}

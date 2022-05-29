@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Prof-It : Register{% endblock %}
+
+{% block content %}
+
+{{ macros.create_header('Register as Student') }}
+
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="row mt-3">
+        <div class="form-group col-md-3">
+            {{ macros.form(form.surname) }}
+        </div>
+        <div class="form-group col-md-6">
+            {{ macros.form(form.first_name) }}
+        </div>
+        <div class="form-group col-md-1">
+            {{ macros.form(form.age) }}
+        </div>
+        <div class="form-group col-md-2">
+            {{ macros.form(form.birth_date) }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="form-group col-md-5">
+            {{ macros.form(form.school) }}
+        </div>
+        <div class="form-group col-md-5">
+            {{ macros.form(form.course) }}
+        </div>
+        <div class="form-group col-md-2">
+            {{ macros.form(form.year_college) }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="form-group">
+            {{ macros.form(form.email) }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="form-group">
+            {{ macros.form(form.password) }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="form-group">
+            {{ macros.form(form.password2) }}
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="form-group">
+            {{ form.submit(class='btn btn-primary') }}
+        </div>
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+.gradient-custom {
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(250, 208, 196, 0.9), rgba(255, 209, 255, 0.9));
+}
+
+.navbar-custom {
+    background-color: #041342;
+}
+
+.logo-custom {
+    color: #041342;
+    font-family: 'Dosis', sans-serif;
+}
+
+
+@media(min-width: 0px) {
+    .logo-custom {
+        font-size: 6rem;
+    }
+}
+
+@media (min-width: 544px) {
+    .logo-custom {
+        font-size: 8rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo-custom {
+        font-size: 10rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .logo-custom {
+        font-size: 12.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .logo-custom {
+        font-size: 15rem;
+    }
+}

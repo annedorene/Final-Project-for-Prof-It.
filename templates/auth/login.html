@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Prof-It : Login{% endblock %}
+
+{% block content %}
+
+{{ macros.create_header('Login') }}
+
+
+<form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+    <div class="row mt-3">
+        <div class="form-group">
+            {{ macros.form(form.email) }}
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="form-group">
+            {{ macros.form(form.password) }}
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="form-group">
+            {{ form.submit(class='btn btn-primary') }}
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

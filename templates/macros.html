@@ -1,0 +1,62 @@
+{% macro show_errors(errors) %}
+{% for error in errors %}
+<span style="color:red;">[{{error}}]</span>
+{% endfor %}
+{% endmacro %}
+
+{% macro create_header(text) -%}
+<div class="page-header">
+    <h1 class="display-3 my-3">
+        {{ text }}
+    </h1>
+</div>
+{%- endmacro %}
+
+{% macro create_lorem() -%}
+<p>
+    lorem ipsum dolor sit amet consectetur adipisicing elit. veritatis eaque suscipit, in officiis debitis maxime! totam
+    velit iure unde ex, modi quisquam, atque qui cum soluta, officiis eos dolores omnis!
+    quidem omnis soluta, eos odio rem excepturi placeat possimus enim aperiam fugit inventore voluptatum officiis beatae
+    aliquid. perspiciatis debitis dignissimos blanditiis provident, quibusdam quia et. placeat possimus consequuntur
+    magnam in.
+    eum, quibusdam laboriosam porro obcaecati eveniet ad perferendis quia fuga deleniti asperiores vel, optio nemo
+    consequuntur libero illum sunt quidem? fuga quae nesciunt expedita velit sapiente dicta quos facilis tenetur.
+</p>
+<p>
+    lorem ipsum dolor sit amet consectetur adipisicing elit. veritatis eaque suscipit, in officiis debitis maxime! totam
+    velit iure unde ex, modi quisquam, atque qui cum soluta, officiis eos dolores omnis!
+    quidem omnis soluta, eos odio rem excepturi placeat possimus enim aperiam fugit inventore voluptatum officiis beatae
+    aliquid. perspiciatis debitis dignissimos blanditiis provident, quibusdam quia et. placeat possimus consequuntur
+    magnam in.
+    eum, quibusdam laboriosam porro obcaecati eveniet ad perferendis quia fuga deleniti asperiores vel, optio nemo
+    consequuntur libero illum sunt quidem? fuga quae nesciunt expedita velit sapiente dicta quos facilis tenetur.
+</p>
+<p>
+    lorem ipsum dolor sit amet consectetur adipisicing elit. veritatis eaque suscipit, in officiis debitis maxime! totam
+    velit iure unde ex, modi quisquam, atque qui cum soluta, officiis eos dolores omnis!
+    quidem omnis soluta, eos odio rem excepturi placeat possimus enim aperiam fugit inventore voluptatum officiis beatae
+    aliquid. perspiciatis debitis dignissimos blanditiis provident, quibusdam quia et. placeat possimus consequuntur
+    magnam in.
+    eum, quibusdam laboriosam porro obcaecati eveniet ad perferendis quia fuga deleniti asperiores vel, optio nemo
+    consequuntur libero illum sunt quidem? fuga quae nesciunt expedita velit sapiente dicta quos facilis tenetur.
+</p>
+{%- endmacro %}
+
+{% set form_class_dict = {
+'StringField': 'form-control',
+'IntegerField': 'form-control',
+'PasswordField': 'form-control',
+'DateField' : 'form-control',
+'SubmitField' : 'btn btn-primary',
+'SelectField' : 'form-select',
+} %}
+
+
+{% macro form(form) -%}
+
+{% set form_class = form.__class__.__name__ %}
+{{ form.label(class='form-label') }}
+{{ form(class=form_class_dict[form_class]) }}
+{{ show_errors(form.errors) }}
+
+{%- endmacro %}

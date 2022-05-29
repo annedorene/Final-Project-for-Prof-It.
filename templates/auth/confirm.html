@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Prof-It : Confirm{% endblock %}
+
+{% block content %}
+
+{{ macros.create_header('Details') }}
+
+
+
+<table class="table table-light table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Info</th>
+            <th scope="col">Input</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Surname</th>
+            <td>{{ form["surname"] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">First name</th>
+            <td>{{ form["first_name"] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Age</th>
+            <td>{{ form["age"] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Birth Date</th>
+            <td>{{ form["birth_date"].replace(' 00:00:00 GMT','') }}</td>
+        </tr>
+        <tr>
+            <th scope="row">School</th>
+            <td>{{ form["school"] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Year of College</th>
+            <td>{{ form["year_college"] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Course</th>
+            <td>{{ form["course"] }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td>{{ form["email"] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<form action="" method="post" novalidate>
+    {{ submit_button.hidden_tag() }}
+    <div class="row my-3">
+        <div class="form-group">
+            {{ submit_button.back(class='btn btn-primary float-start') }}
+            {{ submit_button.submit(class='btn btn-primary float-end') }}
+        </div>
+    </div>
+
+</form>
+
+
+{% endblock %}

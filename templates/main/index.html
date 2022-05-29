@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Prof-It : Home{% endblock %}
+
+{% block content %}
+
+{% if current_user.is_authenticated %}
+<div class="page-header">
+    <h1 class="display-3">
+        Welcome {{ current_user.first_name }}!
+    </h1>
+    <div class="text-center">
+        <img class="img-fluid " src="static/images/prof-book.png" alt="">
+    </div>
+</div>
+
+{% else %}
+<div class="container">
+    <div class="text-center module">
+        <h1 class="logo-custom">Prof-It</h1>
+        <img src="static/images/book.png" alt="" class="img-fluid">
+    </div>
+
+    <!-- <div class="text-center">
+        <img class="img-fluid " src="static/images/prof-book.png" alt="">
+    </div> -->
+    <div class="row justify-content-center my-2">
+        <a href="{{ url_for('login') }}" class="col-md-6 btn btn-success btn-lg">Login</a>
+    </div>
+    <div class="row justify-content-center">
+        <a href="{{ url_for('register') }}" class="col-md-6 btn btn-warning btn-lg">Register as Student</a>
+    </div>
+</div>
+{% endif %}
+
+
+{% endblock %}
